@@ -24,13 +24,50 @@ DESCRIPTION
     example, a Data::Vitals::Waist object specifically refers for a
     measurement of the circumference of the torso taken at a waist.
 
-STATUS
-    This contains an implementation of the relatively straight forward
-    measurements. Height + the various chest/waist/hip ones.
+  Metric and Imperial
+    Please note that all measurements are stored and stringified into metric
+    values (although they can be input in various forms). This is for
+    forward compability with the long term worldwide trend towards
+    metrification. For now, locales that use imperial values should
+    explicitly call the various "->as_imperial" methods.
 
-    Unit testing is up to date, but documentation is not. See the source
-    code for how to work with the objects so far defined. Please be aware
-    that the API may change.
+    Full support for locales and i18n will be added in a later version.
+
+  Class List
+    Data::Vitals::Height - Height measurement
+
+    Data::Vitals::Circumference - General circumference measurement
+
+    Data::Vitals::Hips - Measurement of the circumference around the hips
+
+    Data::Vitals::Waist - Measurement of the circumference around the waist
+
+    Data::Vitals::Frame - The "Frame" measurement. Circumference around the
+    chest, just below the breasts.
+
+    Data::Vitals::Chest - Measurement of the circumference around the chest
+
+    Data::Vitals::Underarm - Measurement of the circumference around the
+    torso at a position under the arms.
+
+STATUS
+    This contains an implementation of Height measurements, plus a number of
+    measurements of the circumference of the torso at various points. i.e.
+    Hips/Waist/Chest/etc
+
+    Unit testing and documentation is up to date.
+
+    Please note that nothing that produces an error (by returning "undef")
+    sets an error message in any form. This will be resolved in a later
+    version.
+
+    Please note that the measurement ranges are very large by default. The
+    maximum allowable values exceed by a small percentage the world records
+    for the various measurements (at the time of writing).
+
+    However, the minimums of the range may be unsuitable for newborn or
+    premature babies. The ability to customise these ranges will be added in
+    a later version.
 
 METHODS
   height $height
@@ -41,14 +78,18 @@ METHODS
     error.
 
   hips $circumference
-    The "hips" method creates and returns a hip measurement object. It takes
-    as argument a "circumference string".
+    The "hips" method creates and returns a hip measurement object.
+
+    It takes as argument a "circumference string" (see
+    Data::Vitals::Circumference for details)
 
     Returns a new Data::Vitals::Hips object, or "undef" on error.
 
   waist $circumference
-    The "waist" method creates and returns a waist measurement object. It
-    takes as argument a "circumference string".
+    The "waist" method creates and returns a waist measurement object.
+
+    It takes as argument a "circumference string" (see
+    Data::Vitals::Circumference for details)
 
     Returns a new Data::Vitals::Waist object, or "undef" on error.
 
@@ -56,15 +97,19 @@ METHODS
     The "frame" method creates and returns a "frame" measurement object.
     Mainly used for women, the frame is the circumference of the torso over
     the rib cage, immediately below the breasts and specifically not
-    included any breast material. It takes as argument a "circumference
-    string".
+    included any breast material.
+
+    It takes as argument a "circumference string" (see
+    Data::Vitals::Circumference for details)
 
     Returns a new Data::Vitals::Frame object, or "undef" on error.
 
   chest $circumference
     The "chest" method creates and returns a chest measurement object. For
-    women, this is also known as a "bust" measurement. It takes as argument
-    a "circumference string".
+    women, this is also known as a "bust" measurement.
+
+    It takes as argument a "circumference string" (see
+    Data::Vitals::Circumference for details)
 
     Returns a new Data::Vitals::Chest object on success, or "undef" on
     error.
@@ -75,15 +120,16 @@ METHODS
   underarm $circumference
     The "underarm" method creates and returns an underarm measurement
     object, which is the circumference of the torso under the arms and above
-    (for women) the breasts. Takes as argument a "circumference string".
+    (for women) the breasts.
+
+    It takes as argument a "circumference string" (see
+    Data::Vitals::Circumference for details)
 
     Returns a new Data::Vitals::Underarm object, or "undef" on error.
 
 TO DO
-    - Document the measurement classes properly
-
-    - Allow for per-measurement valid ranges, that can be tweaked if needed
-    in special cases.
+    - Allow for per-measurement ranges, that can be tweaked if needed in
+    special cases.
 
     - Add Data::Vitals::Weight
 

@@ -15,7 +15,7 @@ BEGIN {
 	}
 }
 
-use Test::More tests => 4;
+use Test::More tests => 6;
 use Data::Vitals::Circumference;
 
 
@@ -27,8 +27,10 @@ use Data::Vitals::Circumference;
 
 my $Circumference = Data::Vitals::Circumference->new('38"');
 isa_ok( $Circumference, 'Data::Vitals::Circumference' );
-is( $Circumference->as_string, '97cm', 'Returned correct string form' );
-is( $Circumference->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Circumference->as_inches, '38"',  'Returned original size'       );
+is( $Circumference->as_string,   '97cm', 'Returned correct string form'   );
+is( $Circumference->as_metric,   '97cm', 'Returned correct metric form'   );
+is( $Circumference->as_imperial, '38"',  'Returned correct imperial form' );
+is( $Circumference->as_cms,      '97cm', 'Returned correct cm size'       );
+is( $Circumference->as_inches,   '38"',  'Returned original size'         );
 
 exit(0);

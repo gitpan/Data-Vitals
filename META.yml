@@ -1,5 +1,5 @@
 name: Data-Vitals
-version: 0.00_03
+version: 0.04
 abstract: The Perl "Vital Statistics" Library
 author: Adam Kennedy<cpan@ali.as>
 license: perl

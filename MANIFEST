@@ -28,6 +28,7 @@ t/01_compile.t
 t/02_api.t
 t/03_util.t
 t/04_height.t
+t/05_vitals.t
 t/10_circumference.t
 t/11_hips.t
 t/12_waist.t

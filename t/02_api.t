@@ -15,7 +15,7 @@ BEGIN {
 	}
 }
 
-use Test::More 'tests' => 82;
+use Test::More 'tests' => 83;
 use Test::ClassAPI;
 
 # Load the API to test
@@ -45,6 +45,7 @@ waist=method
 frame=method
 chest=method
 bust=method
+underarm=method
 
 [Data::Vitals::Util]
 inch2cm=method
