@@ -13,6 +13,8 @@ inc/Module/Install/WriteAll.pm
 lib/Data/Vitals.pm
 lib/Data/Vitals/Chest.pm
 lib/Data/Vitals/Circumference.pm
+lib/Data/Vitals/Frame.pm
+lib/Data/Vitals/Height.pm
 lib/Data/Vitals/Hips.pm
 lib/Data/Vitals/Util.pm
 lib/Data/Vitals/Waist.pm
@@ -24,7 +26,9 @@ README
 t/01_compile.t
 t/02_api.t
 t/03_util.t
+t/04_height.t
 t/10_circumference.t
 t/11_hips.t
 t/12_waist.t
 t/13_chest.t
+t/14_frame.t

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# Unit testing for Data::Vitals::Chest
+# Unit testing for Data::Vitals::Frame
 
 use strict;
 use lib ();
@@ -16,7 +16,7 @@ BEGIN {
 }
 
 use Test::More tests => 4;
-use Data::Vitals::Chest;
+use Data::Vitals::Frame;
 
 
 
@@ -25,10 +25,10 @@ use Data::Vitals::Chest;
 #####################################################################
 # Constructor
 
-my $Chest = Data::Vitals::Chest->new('38"');
-isa_ok( $Chest, 'Data::Vitals::Chest' );
-is( $Chest->as_string, '97cm', 'Returned correct string form' );
-is( $Chest->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Chest->as_inches, '38"',  'Returned original size'       );
+my $Frame = Data::Vitals::Frame->new('38"');
+isa_ok( $Frame, 'Data::Vitals::Frame' );
+is( $Frame->as_string, '97cm', 'Returned correct string form' );
+is( $Frame->as_cms,    '97cm', 'Returned correct cm size'     );
+is( $Frame->as_inches, '38"',  'Returned original size'       );
 
 exit(0);

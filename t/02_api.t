@@ -15,7 +15,7 @@ BEGIN {
 	}
 }
 
-use Test::More 'tests' => 43;
+use Test::More 'tests' => 72;
 use Test::ClassAPI;
 
 # Load the API to test
@@ -30,14 +30,18 @@ __DATA__
 
 Data::Vitals=class
 Data::Vitals::Util=class
+Data::Vitals::Height=class
 Data::Vitals::Circumference=class
 Data::Vitals::Hips=class
 Data::Vitals::Waist=class
+Data::Vitals::Frame=class
 Data::Vitals::Chest=class
 
 [Data::Vitals]
+height=method
 hips=method
 waist=method
+frame=method
 chest=method
 bust=method
 
@@ -45,9 +49,19 @@ bust=method
 inch2cm=method
 cm2inch=method
 
+[Data::Vitals::Height]
+new=method
+as_string=method
+as_metric=method
+as_imperial=method
+as_cms=method
+as_feet=method
+
 [Data::Vitals::Circumference]
 new=method
 as_string=method
+as_metric=method
+as_imperial=method
 as_cms=method
 as_inches=method
 
@@ -55,6 +69,9 @@ as_inches=method
 Data::Vitals::Circumference=isa
 
 [Data::Vitals::Waist]
+Data::Vitals::Circumference=isa
+
+[Data::Vitals::Frame]
 Data::Vitals::Circumference=isa
 
 [Data::Vitals::Chest]

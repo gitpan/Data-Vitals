@@ -15,14 +15,16 @@ BEGIN {
 	}
 }
 
-use Test::More tests => 6;
+use Test::More tests => 8;
 
 # Does the module load
 use_ok('Data::Vitals'               );
 use_ok('Data::Vitals::Util'         );
+use_ok('Data::Vitals::Height'       );
 use_ok('Data::Vitals::Circumference');
-use_ok('Data::Vitals::Waist'        );
 use_ok('Data::Vitals::Hips'         );
+use_ok('Data::Vitals::Waist'        );
+use_ok('Data::Vitals::Frame'        );
 use_ok('Data::Vitals::Chest'        );
 
 exit(0);

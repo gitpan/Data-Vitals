@@ -32,8 +32,8 @@ measurement of the circumference of the torso taken at a waist.
 
 =head1 STATUS
 
-This is the first upload of this package. It is intended primarily to
-reserve the namespace, but does contain some basic measurement objects.
+This contains an implementation of the relatively straight forward
+measurements. Height + the various chest/waist/hip ones.
 
 Unit testing is up to date, but documentation is not. See the source code
 for how to work with the objects so far defined. Please be aware that the
@@ -49,14 +49,16 @@ use UNIVERSAL 'isa';
 
 # Load the entire distribution
 use Data::Vitals::Util          ();
+use Data::Vitals::Height        ();
 use Data::Vitals::Circumference ();
-use Data::Vitals::Chest         ();
-use Data::Vitals::Waist         ();
 use Data::Vitals::Hips          ();
+use Data::Vitals::Waist         ();
+use Data::Vitals::Frame         ();
+use Data::Vitals::Chest         ();
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.00_01';
+	$VERSION = '0.00_02';
 }
 
 
@@ -68,7 +70,23 @@ BEGIN {
 
 =pod
 
-=head2 chest $size
+=head2 height $height
+
+The C<height> method creates and returns a height object. It takes as
+argument a "height string".
+
+Returns a new Data::Vitals::Height object on success, or C<undef> on
+error.
+
+=cut
+
+sub height {
+	Data::Vitals::Height->new($_[1]);
+}
+
+=pod
+
+=head2 chest $circumference
 
 The C<chest> method creates and returns a chest measurement object. For
 women, this is also known as a "bust" measurement. It takes as argument
@@ -85,7 +103,7 @@ sub chest {
 
 =pod
 
-=head2 bust $size
+=head2 bust $circumference
 
 The C<bust> method is an alias for the L<chest|Data::Vitals/chest> method.
 
@@ -97,7 +115,24 @@ sub bust {
 
 =pod
 
-=head2 waist $size
+=head2 frame $circumference
+
+The C<frame> method creates and returns a "frame" measurement object.
+Mainly used for women, the frame is the circumference of the torso over the
+rib cage, immediately below the breasts and specifically not included any
+breast material. It takes as argument a "circumference string".
+
+Returns a new Data::Vitals::Frame object, or C<undef> on error.
+
+=cut
+
+sub frame {
+	Data::Vitals::Frame->new($_[1]);
+}
+
+=pod
+
+=head2 waist $circumference
 
 The C<waist> method creates and returns a waist measurement object. It takes
 as argument a "circumference string".
@@ -112,7 +147,7 @@ sub waist {
 
 =pod
 
-=head2 hips $size
+=head2 hips $circumference
 
 The C<hips> method creates and returns a hip measurement object. It takes
 as argument a "circumference string".
@@ -137,8 +172,6 @@ sub hips {
 
 - Allow for per-measurement valid ranges, that can be tweaked if needed in
 special cases.
-
-- Add Data::Vitals::Height
 
 - Add Data::Vitals::Weight
 

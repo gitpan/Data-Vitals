@@ -25,10 +25,10 @@ use Data::Vitals::Hips;
 #####################################################################
 # Constructor
 
-my $Hip = Data::Vitals::Hips->new('38"');
-isa_ok( $Hip, 'Data::Vitals::Hips' );
-is( $Hip->as_string, '97cm', 'Returned correct string form' );
-is( $Hip->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Hip->as_inches, '38"',  'Returned original size'       );
+my $Hips = Data::Vitals::Hips->new('38"');
+isa_ok( $Hips, 'Data::Vitals::Hips' );
+is( $Hips->as_string, '97cm', 'Returned correct string form' );
+is( $Hips->as_cms,    '97cm', 'Returned correct cm size'     );
+is( $Hips->as_inches, '38"',  'Returned original size'       );
 
 exit(0);

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# Unit testing for Data::Vitals::Chest
+# Unit testing for Data::Vitals::Height
 
 use strict;
 use lib ();
@@ -16,7 +16,7 @@ BEGIN {
 }
 
 use Test::More tests => 4;
-use Data::Vitals::Chest;
+use Data::Vitals::Height;
 
 
 
@@ -25,10 +25,10 @@ use Data::Vitals::Chest;
 #####################################################################
 # Constructor
 
-my $Chest = Data::Vitals::Chest->new('38"');
-isa_ok( $Chest, 'Data::Vitals::Chest' );
-is( $Chest->as_string, '97cm', 'Returned correct string form' );
-is( $Chest->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Chest->as_inches, '38"',  'Returned original size'       );
+my $Height = Data::Vitals::Height->new("6'0\"");
+isa_ok( $Height, 'Data::Vitals::Height' );
+is( $Height->as_string, '183cm', 'Returned correct string form' );
+is( $Height->as_cms,    '183cm', 'Returned correct cm size'     );
+is( $Height->as_feet,   "6'0\"",   'Returned original size'       );
 
 exit(0);

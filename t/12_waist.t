@@ -25,10 +25,10 @@ use Data::Vitals::Waist;
 #####################################################################
 # Constructor
 
-my $Hip = Data::Vitals::Waist->new('38"');
-isa_ok( $Hip, 'Data::Vitals::Waist' );
-is( $Hip->as_string, '97cm', 'Returned correct string form' );
-is( $Hip->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Hip->as_inches, '38"',  'Returned original size'       );
+my $Waist = Data::Vitals::Waist->new('38"');
+isa_ok( $Waist, 'Data::Vitals::Waist' );
+is( $Waist->as_string, '97cm', 'Returned correct string form' );
+is( $Waist->as_cms,    '97cm', 'Returned correct cm size'     );
+is( $Waist->as_inches, '38"',  'Returned original size'       );
 
 exit(0);

@@ -25,10 +25,10 @@ use Data::Vitals::Circumference;
 #####################################################################
 # Constructor
 
-my $Hip = Data::Vitals::Circumference->new('38"');
-isa_ok( $Hip, 'Data::Vitals::Circumference' );
-is( $Hip->as_string, '97cm', 'Returned correct string form' );
-is( $Hip->as_cms,    '97cm', 'Returned correct cm size'     );
-is( $Hip->as_inches, '38"',  'Returned original size'       );
+my $Circumference = Data::Vitals::Circumference->new('38"');
+isa_ok( $Circumference, 'Data::Vitals::Circumference' );
+is( $Circumference->as_string, '97cm', 'Returned correct string form' );
+is( $Circumference->as_cms,    '97cm', 'Returned correct cm size'     );
+is( $Circumference->as_inches, '38"',  'Returned original size'       );
 
 exit(0);
