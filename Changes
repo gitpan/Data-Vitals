@@ -1,5 +1,8 @@
 Revision history for Perl extension Data::Vitals
 
+0.05 Mon Oct 18 2004
+	- Adding missing Test::ClassAPI dependency
+
 0.04 Sun Oct 17 2004
 	- First production release
 	- Added full and comprehensive documentation
