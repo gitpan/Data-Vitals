@@ -40,6 +40,27 @@ METHODS
     Returns a new Data::Vitals::Height object on success, or "undef" on
     error.
 
+  hips $circumference
+    The "hips" method creates and returns a hip measurement object. It takes
+    as argument a "circumference string".
+
+    Returns a new Data::Vitals::Hips object, or "undef" on error.
+
+  waist $circumference
+    The "waist" method creates and returns a waist measurement object. It
+    takes as argument a "circumference string".
+
+    Returns a new Data::Vitals::Waist object, or "undef" on error.
+
+  frame $circumference
+    The "frame" method creates and returns a "frame" measurement object.
+    Mainly used for women, the frame is the circumference of the torso over
+    the rib cage, immediately below the breasts and specifically not
+    included any breast material. It takes as argument a "circumference
+    string".
+
+    Returns a new Data::Vitals::Frame object, or "undef" on error.
+
   chest $circumference
     The "chest" method creates and returns a chest measurement object. For
     women, this is also known as a "bust" measurement. It takes as argument
@@ -51,31 +72,15 @@ METHODS
   bust $circumference
     The "bust" method is an alias for the chest method.
 
-  frame $circumference
-    The "frame" method creates and returns a "frame" measurement object.
-    Mainly used for women, the frame is the circumference of the torso over
-    the rib cage, immediately below the breasts and specifically not
-    included any breast material. It takes as argument a "circumference
-    string".
+  underarm $circumference
+    The "underarm" method creates and returns an underarm measurement
+    object, which is the circumference of the torso under the arms and above
+    (for women) the breasts. Takes as argument a "circumference string".
 
-    Returns a new Data::Vitals::Frame object, or "undef" on error.
-
-  waist $circumference
-    The "waist" method creates and returns a waist measurement object. It
-    takes as argument a "circumference string".
-
-    Returns a new Data::Vitals::Waist object, or "undef" on error.
-
-  hips $circumference
-    The "hips" method creates and returns a hip measurement object. It takes
-    as argument a "circumference string".
-
-    Returns a new Data::Vitals::Hips object, or "undef" on error.
+    Returns a new Data::Vitals::Underarm object, or "undef" on error.
 
 TO DO
     - Document the measurement classes properly
-
-    - Add more measurement classes such as Data::Vitals::Underarm
 
     - Allow for per-measurement valid ranges, that can be tweaked if needed
     in special cases.
@@ -86,7 +91,7 @@ TO DO
 
     - Add Data::Vitals::Dress (in the various country standards)
 
-    - Add Data::Vitals::Show (in the various country standards)
+    - Add Data::Vitals::Shoe (in the various country standards)
 
 SUPPORT
     Bugs should always be reported via the CPAN bug tracker

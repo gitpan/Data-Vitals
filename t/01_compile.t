@@ -15,7 +15,7 @@ BEGIN {
 	}
 }
 
-use Test::More tests => 8;
+use Test::More tests => 9;
 
 # Does the module load
 use_ok('Data::Vitals'               );
@@ -26,5 +26,6 @@ use_ok('Data::Vitals::Hips'         );
 use_ok('Data::Vitals::Waist'        );
 use_ok('Data::Vitals::Frame'        );
 use_ok('Data::Vitals::Chest'        );
+use_ok('Data::Vitals::Underarm'     );
 
 exit(0);

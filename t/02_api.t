@@ -15,7 +15,7 @@ BEGIN {
 	}
 }
 
-use Test::More 'tests' => 72;
+use Test::More 'tests' => 82;
 use Test::ClassAPI;
 
 # Load the API to test
@@ -36,6 +36,7 @@ Data::Vitals::Hips=class
 Data::Vitals::Waist=class
 Data::Vitals::Frame=class
 Data::Vitals::Chest=class
+Data::Vitals::Underarm=class
 
 [Data::Vitals]
 height=method
@@ -75,4 +76,7 @@ Data::Vitals::Circumference=isa
 Data::Vitals::Circumference=isa
 
 [Data::Vitals::Chest]
+Data::Vitals::Circumference=isa
+
+[Data::Vitals::Underarm]
 Data::Vitals::Circumference=isa

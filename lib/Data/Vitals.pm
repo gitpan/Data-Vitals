@@ -55,10 +55,11 @@ use Data::Vitals::Hips          ();
 use Data::Vitals::Waist         ();
 use Data::Vitals::Frame         ();
 use Data::Vitals::Chest         ();
+use Data::Vitals::Underarm      ();
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.00_02';
+	$VERSION = '0.00_03';
 }
 
 
@@ -84,34 +85,41 @@ sub height {
 	Data::Vitals::Height->new($_[1]);
 }
 
-=pod
-
-=head2 chest $circumference
-
-The C<chest> method creates and returns a chest measurement object. For
-women, this is also known as a "bust" measurement. It takes as argument
-a "circumference string".
-
-Returns a new Data::Vitals::Chest object on success, or C<undef> on
-error.
-
-=cut
-
-sub chest {
-	Data::Vitals::Chest->new($_[1]);
-}
+###------------------------------------------------------------------
 
 =pod
 
-=head2 bust $circumference
+=head2 hips $circumference
 
-The C<bust> method is an alias for the L<chest|Data::Vitals/chest> method.
+The C<hips> method creates and returns a hip measurement object. It takes
+as argument a "circumference string".
+
+Returns a new Data::Vitals::Hips object, or C<undef> on error.
 
 =cut
 
-sub bust {
-	Data::Vitals::Chest->new($_[1]);
+sub hips {
+	Data::Vitals::Hips->new($_[1]);
 }
+
+###------------------------------------------------------------------
+
+=pod
+
+=head2 waist $circumference
+
+The C<waist> method creates and returns a waist measurement object. It takes
+as argument a "circumference string".
+
+Returns a new Data::Vitals::Waist object, or C<undef> on error.
+
+=cut
+
+sub waist {
+	Data::Vitals::Waist->new($_[1]);
+}	
+
+###------------------------------------------------------------------
 
 =pod
 
@@ -130,35 +138,54 @@ sub frame {
 	Data::Vitals::Frame->new($_[1]);
 }
 
-=pod
-
-=head2 waist $circumference
-
-The C<waist> method creates and returns a waist measurement object. It takes
-as argument a "circumference string".
-
-Returns a new Data::Vitals::Waist object, or C<undef> on error.
-
-=cut
-
-sub waist {
-	Data::Vitals::Waist->new($_[1]);
-}	
+###------------------------------------------------------------------
 
 =pod
 
-=head2 hips $circumference
+=head2 chest $circumference
 
-The C<hips> method creates and returns a hip measurement object. It takes
-as argument a "circumference string".
+The C<chest> method creates and returns a chest measurement object. For
+women, this is also known as a "bust" measurement. It takes as argument
+a "circumference string".
 
-Returns a new Data::Vitals::Hips object, or C<undef> on error.
+Returns a new Data::Vitals::Chest object on success, or C<undef> on
+error.
 
 =cut
 
-sub hips {
-	Data::Vitals::Hips->new($_[1]);
+sub chest {
+	Data::Vitals::Chest->new($_[1]);
 }
+
+###------------------------------------------------------------------
+
+=pod
+
+=head2 bust $circumference
+
+The C<bust> method is an alias for the L<chest|Data::Vitals/chest> method.
+
+=cut
+
+sub bust {
+	Data::Vitals::Chest->new($_[1]);
+}
+
+###------------------------------------------------------------------
+
+=pod
+
+=head2 underarm $circumference
+
+The C<underarm> method creates and returns an underarm measurement object,
+which is the circumference of the torso under the arms and above (for
+women) the breasts. Takes as argument a "circumference string".
+
+Returns a new Data::Vitals::Underarm object, or C<undef> on error.
+
+=cut
+
+###------------------------------------------------------------------
 
 1;
 
@@ -167,8 +194,6 @@ sub hips {
 =head1 TO DO
 
 - Document the measurement classes properly
-
-- Add more measurement classes such as Data::Vitals::Underarm
 
 - Allow for per-measurement valid ranges, that can be tweaked if needed in
 special cases.
@@ -179,7 +204,7 @@ special cases.
 
 - Add Data::Vitals::Dress (in the various country standards)
 
-- Add Data::Vitals::Show (in the various country standards)
+- Add Data::Vitals::Shoe (in the various country standards)
 
 =head1 SUPPORT
 

@@ -7,7 +7,7 @@ use base 'Exporter';
 
 use vars qw{$VERSION @EXPORT_OK};
 BEGIN {
-	$VERSION   = '0.01';
+	$VERSION   = '0.02';
 	@EXPORT_OK = qw{cm2inch inch2cm};
 }
 

@@ -7,7 +7,7 @@ use Data::Vitals::Util ();
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.01';
+	$VERSION = '0.02';
 }
 
 use overload 'bool' => sub () { 1 };

@@ -1,7 +1,6 @@
-package Data::Vitals::Frame;
+package Data::Vitals::Underarm;
 
-# A measurement around the torso, immedatiely below and not including the
-# breasts.
+# A measurement around the torso under the arms, and above the breasts.
 # For women, this is one of the measurements used to determine bra size.
 
 use strict;
