@@ -15,6 +15,9 @@ DESCRIPTION
     be heavily unit tested to ensure that packages built on top of
     Data::Vitals have a reliable base.
 
+    Data::Vitals measurement objects are useful for both male and female
+    measurements.
+
   Implementation Style
     As is generally the case with complex and twisty subjects (such as
     DateTime) this library is implemented in a highly object-orientated
@@ -30,8 +33,6 @@ DESCRIPTION
     forward compability with the long term worldwide trend towards
     metrification. For now, locales that use imperial values should
     explicitly call the various "->as_imperial" methods.
-
-    Full support for locales and i18n will be added in a later version.
 
   Class List
     Data::Vitals::Height - Height measurement
@@ -142,20 +143,25 @@ TO DO
 SUPPORT
     Bugs should always be reported via the CPAN bug tracker
 
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Data%3A%3AVitals>
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Data-Vitals>
 
     For other issues, contact the maintainer.
 
-AUTHORS
-    Adam Kennedy (Maintainer), <http://ali.as/>, cpan@ali.as
+    As the author is no longer working in the fashion/modelling industry,
+    volunteers for taking over maintenance would be gratefully accepted.
 
+AUTHORS
+    Adam Kennedy <adamk@cpan.org>
+
+ACKNOWLEGEMENTS
     Thank you to Phase N (<http://phase-n.com/>) for permitting the open
     sourcing and release of this distribution.
 
 COPYRIGHT
-    Copyright (c) 2004 Adam Kennedy. All rights reserved. This program is
-    free software; you can redistribute it and/or modify it under the same
-    terms as Perl itself.
+    Copyright 2004 - 2008 Adam Kennedy.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
     The full text of the license can be found in the LICENSE file included
     with this module.
